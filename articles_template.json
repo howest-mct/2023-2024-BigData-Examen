@@ -1,0 +1,44 @@
+{
+  "index_patterns": "articles*",
+  "template": {
+    "settings": {
+      "number_of_shards": 1,
+      "number_of_replicas": 2
+    },
+    "mappings": {
+      "properties": {
+        "organizations": {
+          "type": "keyword"
+        },
+        "people": {
+          "type": "keyword"
+        },
+        "places": {
+          "type": "keyword"
+        },
+        "text": {
+          "type": "text"
+        },
+        "title": {
+          "type": "text",
+          "fields": {
+            "keyword": {
+              "type": "keyword"
+            }
+          }
+        },
+        "topics": {
+          "type": "keyword"
+        },
+        "date": {
+          "type": "date"
+        }
+      }
+    }
+  },
+  "priority": 100,
+  "version": 1,
+  "_meta": {
+    "description": "Articles template."
+  }
+}
